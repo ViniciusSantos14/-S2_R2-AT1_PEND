@@ -1,7 +1,6 @@
-let nome = document.getElementById("nome");
-let botao = document.querySelector("#botao");
-let mensagem = document.getElementById("mensagem");
+let texto = document.getElementById("texto")
+let btnMudar = document.querySelector("#btnMudar")
 
-botao.addEventListener("click", () => {
-    mensagem.innerText = `Bem vindo ${nome.value}`;
-});
+btnMudar.addEventListener("click", () => {
+    texto.innerText = "texto alterado"
+})

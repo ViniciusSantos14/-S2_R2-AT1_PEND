@@ -1,52 +1,40 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Usuario</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<meta charset="UTF-8">
+<title>Alterar Texto</title>
+
+<link
+href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+rel="stylesheet">
+
 </head>
-<body>
 
-<header class="bg-white shadow-sm p-3 mb-5">
-    <div class="container d-flex justify-content-center">
-        <h1 class="h4 text-uppercase fw-bold text-primary">
-            Cadastro de Usuário
-        </h1>
-    </div>
-</header>
+<body class="bg-light">
 
-<main class="container d-flex align-items-center justify-content-center">
-    <div class="card card-login w-100 p-4 bg-white">
+<main class="container mt-5">
 
-        <div class="text-center mb-4">
-            <h2 class="h5 text-muted">Criar Usuário</h2>
-        </div>
+<h1 class="text-center mb-4">
 
-        <form>
-            <div class="mb-3">
-                <label for="nome" class="form-label">Usuário</label>
-                <input type="text" id="nome" class="form-control" placeholder="Digite seu nome" required>
-            </div>
+</h1>
 
-            <div class="d-grid gap-2">
-                <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="button" id="botao">
-                    Entrar
-                </button>
-            </div>
+<div class="card">
+<div class="card-body text-center">
 
-            <p id="mensagem" class="fw-bold"></p>
-        </form>
+<p id="texto">
+clique no botão para mudar o texto
+</p>
 
-    </div>
+<button id="btnMudar" class="btn btn-primary">
+mudar texto
+</button>
+
+</div>
+</div>
+
 </main>
 
-<footer class="bg-dark text-white text-center py-3 mt-5">
-    <div class="container">
-        <small>&copy; 2026 Cadastro do Usuário - Todos os direitos reservados.</small>
-    </div>
-</footer>
+<script src="script.js"></script>
 
-<script src="./script.js"></script>
 </body>
 </html>
