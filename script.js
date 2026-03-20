@@ -1,27 +1,32 @@
 let item = document.querySelector("#item")
 let botaoAdicionar = document.querySelector("#botaoAdicionar")
 let listaItens = document.getElementById("listaItens")
-let mensagem = document.getElementById("mensagem")
 
 botaoAdicionar.addEventListener("click", () => {
 
-    let texto = item.value.trim() 
+    let texto = item.value
 
-    if (texto === "") {
-
-        mensagem.innerHTML = '<div class="alert alert-danger">Tarefa vazia!</div>' // 🔸 NOVO
-
-    } else {
+    if (texto !== "") {
 
         let novoItem = document.createElement("li")
-        novoItem.innerText = texto
         novoItem.className = "list-group-item"
+
+        let span = document.createElement("span")
+        span.innerText = texto
+
+        let botaoRemover = document.createElement("button")
+        botaoRemover.innerText = "Remover"
+
+        botaoRemover.addEventListener("click", () => {
+            novoItem.remove() 
+        })
+
+        novoItem.appendChild(span)
+        novoItem.appendChild(botaoRemover)
 
         listaItens.appendChild(novoItem)
 
         item.value = ""
-
-        mensagem.innerHTML = '<div class="alert alert-success">Tarefa adicionada!</div>' // 🔸 NOVO
     }
 
 })
