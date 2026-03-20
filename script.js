@@ -1,6 +1,27 @@
-let texto = document.getElementById("texto")
-let btnMudar = document.querySelector("#btnMudar")
+let item = document.querySelector("#item")
+let botaoAdicionar = document.querySelector("#botaoAdicionar")
+let listaItens = document.getElementById("listaItens")
+let mensagem = document.getElementById("mensagem")
 
-btnMudar.addEventListener("click", () => {
-    texto.innerText = "texto alterado"
+botaoAdicionar.addEventListener("click", () => {
+
+    let texto = item.value.trim() 
+
+    if (texto === "") {
+
+        mensagem.innerHTML = '<div class="alert alert-danger">Tarefa vazia!</div>' // 🔸 NOVO
+
+    } else {
+
+        let novoItem = document.createElement("li")
+        novoItem.innerText = texto
+        novoItem.className = "list-group-item"
+
+        listaItens.appendChild(novoItem)
+
+        item.value = ""
+
+        mensagem.innerHTML = '<div class="alert alert-success">Tarefa adicionada!</div>' // 🔸 NOVO
+    }
+
 })
