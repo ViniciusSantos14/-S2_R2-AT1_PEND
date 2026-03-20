@@ -11,16 +11,29 @@ botaoAdicionar.addEventListener("click", () => {
         let novoItem = document.createElement("li")
         novoItem.className = "list-group-item"
 
+        let checkbox = document.createElement("input") 
+        checkbox.type = "checkbox"
+
         let span = document.createElement("span")
         span.innerText = texto
 
         let botaoRemover = document.createElement("button")
         botaoRemover.innerText = "Remover"
+        botaoRemover.style.marginLeft = "10px" 
 
-        botaoRemover.addEventListener("click", () => {
-            novoItem.remove() 
+        checkbox.addEventListener("change", () => { 
+            if (checkbox.checked) { 
+                span.style.textDecoration = "line-through"
+            } else {
+                span.style.textDecoration = "none"
+            }
         })
 
+        botaoRemover.addEventListener("click", () => {
+            novoItem.remove()
+        })
+
+        novoItem.appendChild(checkbox)
         novoItem.appendChild(span)
         novoItem.appendChild(botaoRemover)
 
